@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t medsaid/react-test -f ./client/Dockerfile.dev
+  - docker build -t medsaidraoudh/react-test -f ./client/Dockerfile.dev ./
 
 script:
-  - docker run  -e CI=true medsaid/react-test npm test -- --coverage
+  - docker run  -e CI=true medsaidraoudh/react-test npm test -- --coverage
 
 after_success:
   - docker build -t medsaidraoudh/multi-client ./client
