@@ -9,7 +9,7 @@ script:
   - docker run  -e CI=true medsaidraoudh/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t medsaidraoudh/multi-client ./client
+  - docker build -t medsaidraoudh/multi-client:v2 ./client
   - docker build -t medsaidraoudh/multi-nginx ./nginx
   - docker build -t medsaidraoudh/multi-server ./server
   - docker build -t medsaidraoudh/multi-worker ./worker
